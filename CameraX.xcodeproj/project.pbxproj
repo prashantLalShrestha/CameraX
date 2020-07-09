@@ -16,8 +16,6 @@
 		8F6C28E624B6E7EF00531331 /* CaptureSession+Focus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28B824B6E7EF00531331 /* CaptureSession+Focus.swift */; };
 		8F6C28E724B6E7EF00531331 /* DocumentScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28BA24B6E7EF00531331 /* DocumentScanViewController.swift */; };
 		8F6C28E824B6E7EF00531331 /* DocumentScanCaptureSessionDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28BB24B6E7EF00531331 /* DocumentScanCaptureSessionDelegateImpl.swift */; };
-		8F6C28E924B6E7EF00531331 /* FaceScanCaptureSessionDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28BD24B6E7EF00531331 /* FaceScanCaptureSessionDelegateImpl.swift */; };
-		8F6C28EA24B6E7EF00531331 /* FaceScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28BE24B6E7EF00531331 /* FaceScanViewController.swift */; };
 		8F6C28EB24B6E7EF00531331 /* BaseDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28BF24B6E7EF00531331 /* BaseDimensions.swift */; };
 		8F6C28ED24B6E7EF00531331 /* CameraError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28C224B6E7EF00531331 /* CameraError.swift */; };
 		8F6C28EE24B6E7EF00531331 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28C324B6E7EF00531331 /* CameraViewController.swift */; };
@@ -56,8 +54,6 @@
 		8F6C28B824B6E7EF00531331 /* CaptureSession+Focus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptureSession+Focus.swift"; sourceTree = "<group>"; };
 		8F6C28BA24B6E7EF00531331 /* DocumentScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanViewController.swift; sourceTree = "<group>"; };
 		8F6C28BB24B6E7EF00531331 /* DocumentScanCaptureSessionDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentScanCaptureSessionDelegateImpl.swift; sourceTree = "<group>"; };
-		8F6C28BD24B6E7EF00531331 /* FaceScanCaptureSessionDelegateImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceScanCaptureSessionDelegateImpl.swift; sourceTree = "<group>"; };
-		8F6C28BE24B6E7EF00531331 /* FaceScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceScanViewController.swift; sourceTree = "<group>"; };
 		8F6C28BF24B6E7EF00531331 /* BaseDimensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseDimensions.swift; sourceTree = "<group>"; };
 		8F6C28C224B6E7EF00531331 /* CameraError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraError.swift; sourceTree = "<group>"; };
 		8F6C28C324B6E7EF00531331 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +100,6 @@
 			children = (
 				8F6C28B124B6E7EE00531331 /* CaptureSession */,
 				8F6C28B924B6E7EF00531331 /* DocumentScan */,
-				8F6C28BC24B6E7EF00531331 /* FaceScan */,
 				8F6C28BF24B6E7EF00531331 /* BaseDimensions.swift */,
 				8F6C28C224B6E7EF00531331 /* CameraError.swift */,
 				8F6C28C324B6E7EF00531331 /* CameraViewController.swift */,
@@ -138,15 +133,6 @@
 				8F6C28BB24B6E7EF00531331 /* DocumentScanCaptureSessionDelegateImpl.swift */,
 			);
 			path = DocumentScan;
-			sourceTree = "<group>";
-		};
-		8F6C28BC24B6E7EF00531331 /* FaceScan */ = {
-			isa = PBXGroup;
-			children = (
-				8F6C28BD24B6E7EF00531331 /* FaceScanCaptureSessionDelegateImpl.swift */,
-				8F6C28BE24B6E7EF00531331 /* FaceScanViewController.swift */,
-			);
-			path = FaceScan;
 			sourceTree = "<group>";
 		};
 		8F6C28C424B6E7EF00531331 /* MLDetectors */ = {
@@ -349,7 +335,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F6C28F524B6E7EF00531331 /* UIImage+Ext.swift in Sources */,
-				8F6C28E924B6E7EF00531331 /* FaceScanCaptureSessionDelegateImpl.swift in Sources */,
 				8F6C290124B6E7EF00531331 /* EditScanCornerView.swift in Sources */,
 				8F6C28E624B6E7EF00531331 /* CaptureSession+Focus.swift in Sources */,
 				8F6C28F824B6E7EF00531331 /* CGAffineTransform+Utils.swift in Sources */,
@@ -377,7 +362,6 @@
 				8F6C28FA24B6E7EF00531331 /* CGRect+Ext.swift in Sources */,
 				8F6C28FD24B6E7EF00531331 /* ShutterButton.swift in Sources */,
 				8F6C290224B6E7EF00531331 /* QuadrilateralView.swift in Sources */,
-				8F6C28EA24B6E7EF00531331 /* FaceScanViewController.swift in Sources */,
 				8F6C28E424B6E7EF00531331 /* CaptureSession.swift in Sources */,
 				8F6C28F124B6E7EF00531331 /* RectangleFeatureFunnel.swift in Sources */,
 				8F6C28EE24B6E7EF00531331 /* CameraViewController.swift in Sources */,
