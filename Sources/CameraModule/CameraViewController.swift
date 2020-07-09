@@ -66,6 +66,18 @@ open class CameraViewController: UIViewController {
         return .lightContent
     }
     
+    open override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation {
+        return .portrait
+    }
+    
+    open override var shouldAutorotate: Bool {
+        return false
+    }
+    
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        return .portrait
+    }
+    
     var captureSessionManager: CaptureSessionManager?
     public var captureSessionDelegate: CaptureSessionDelegate? {
         didSet { captureSessionManager?.delegate = captureSessionDelegate }
