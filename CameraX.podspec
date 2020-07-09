@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "CameraX"
-  spec.version = "1.0.0"
+  spec.version = "1.0.1"
   spec.summary = "CameraX is a camera Utility module"
 
   spec.description = <<-DESC
