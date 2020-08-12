@@ -84,8 +84,8 @@ open class DocumentScanViewController: CameraViewController {
     
     
     // MARK: - Initializers
-    public init(scanResult: @escaping DocumentScanResultCallback) {
-        self.results = scanResult
+    public init(scanResult: DocumentScanResultCallback? = nil) {
+        self.results = scanResult ?? { _ in }
         super.init()
     }
     
