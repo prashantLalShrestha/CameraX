@@ -165,15 +165,16 @@ open class CameraViewController: UIViewController {
         
         navigationBarConfig()
         
-        CaptureSession.current.isEditing = true
-        captureSessionManager?.start()
-        UIApplication.shared.isIdleTimerDisabled = true
-        
         updateUI()
     }
     
     open override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        CaptureSession.current.isEditing = true
+        captureSessionManager?.start()
+        UIApplication.shared.isIdleTimerDisabled = true
+        
         updateUI()
     }
     
