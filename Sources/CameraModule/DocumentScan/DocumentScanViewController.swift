@@ -100,9 +100,8 @@ open class DocumentScanViewController: CameraViewController {
     }
     
     open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         manageQuadView(scanType: scanType)
+        super.viewDidAppear(animated)
     }
     
     open override func makeUI() {

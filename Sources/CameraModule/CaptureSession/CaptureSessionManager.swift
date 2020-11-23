@@ -163,7 +163,7 @@ extension CaptureSessionManager: AVCapturePhotoCaptureDelegate {
                 delegate?.captureSessionManager(self, didFailWithError: error)
                 return
             }
-            
+            CaptureSession.current.isEditing = true
             delegate?.captureSessionManager(self, didCapturePicture: image)
         } else {
             let error = CameraError.capture

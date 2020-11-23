@@ -66,9 +66,8 @@ open class QRScanViewController: CameraViewController {
     }
     
     open override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
         manageQuadView()
+        super.viewDidAppear(animated)
     }
     
     open override func makeUI() {
