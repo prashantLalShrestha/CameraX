@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F18D55A256B67190005002D /* CIQRDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18D559256B67190005002D /* CIQRDetector.swift */; };
+		8F18D55F256B69220005002D /* AVMetadataObject+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18D55E256B69220005002D /* AVMetadataObject+Ext.swift */; };
+		8F18D5F1256B95CE0005002D /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18D5F0256B95CE0005002D /* QRScanViewController.swift */; };
+		8F18D5F4256B98610005002D /* QRScanCaptureSessionDelegateImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F18D5F3256B98610005002D /* QRScanCaptureSessionDelegateImpl.swift */; };
 		8F6C28E024B6E7EF00531331 /* CaptureSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28B224B6E7EE00531331 /* CaptureSessionManager.swift */; };
 		8F6C28E124B6E7EF00531331 /* CaptureDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28B324B6E7EE00531331 /* CaptureDevice.swift */; };
 		8F6C28E224B6E7EF00531331 /* CaptureSession+Flash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28B424B6E7EF00531331 /* CaptureSession+Flash.swift */; };
@@ -45,6 +49,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F18D559256B67190005002D /* CIQRDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIQRDetector.swift; sourceTree = "<group>"; };
+		8F18D55E256B69220005002D /* AVMetadataObject+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVMetadataObject+Ext.swift"; sourceTree = "<group>"; };
+		8F18D5F0256B95CE0005002D /* QRScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
+		8F18D5F3256B98610005002D /* QRScanCaptureSessionDelegateImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanCaptureSessionDelegateImpl.swift; sourceTree = "<group>"; };
 		8F6C28B224B6E7EE00531331 /* CaptureSessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSessionManager.swift; sourceTree = "<group>"; };
 		8F6C28B324B6E7EE00531331 /* CaptureDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureDevice.swift; sourceTree = "<group>"; };
 		8F6C28B424B6E7EF00531331 /* CaptureSession+Flash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CaptureSession+Flash.swift"; sourceTree = "<group>"; };
@@ -95,19 +103,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F18D558256B5E6D0005002D /* QRScan */ = {
+			isa = PBXGroup;
+			children = (
+				8F18D5F3256B98610005002D /* QRScanCaptureSessionDelegateImpl.swift */,
+				8F18D5F0256B95CE0005002D /* QRScanViewController.swift */,
+			);
+			path = QRScan;
+			sourceTree = "<group>";
+		};
 		8F6C28B024B6E7EE00531331 /* CameraModule */ = {
 			isa = PBXGroup;
 			children = (
-				8F6C28B124B6E7EE00531331 /* CaptureSession */,
-				8F6C28B924B6E7EF00531331 /* DocumentScan */,
 				8F6C28BF24B6E7EF00531331 /* BaseDimensions.swift */,
 				8F6C28C224B6E7EF00531331 /* CameraError.swift */,
 				8F6C28C324B6E7EF00531331 /* CameraViewController.swift */,
-				8F6C28C424B6E7EF00531331 /* MLDetectors */,
-				8F6C28CB24B6E7EF00531331 /* Extensions */,
-				8F6C28D324B6E7EF00531331 /* Edit */,
-				8F6C28D624B6E7EF00531331 /* Views */,
 				8F6C28DF24B6E7EF00531331 /* ImageScanResult.swift */,
+				8F6C28B124B6E7EE00531331 /* CaptureSession */,
+				8F6C28B924B6E7EF00531331 /* DocumentScan */,
+				8F6C28D324B6E7EF00531331 /* Edit */,
+				8F6C28CB24B6E7EF00531331 /* Extensions */,
+				8F6C28C424B6E7EF00531331 /* MLDetectors */,
+				8F18D558256B5E6D0005002D /* QRScan */,
+				8F6C28D624B6E7EF00531331 /* Views */,
 			);
 			path = CameraModule;
 			sourceTree = "<group>";
@@ -115,13 +133,13 @@
 		8F6C28B124B6E7EE00531331 /* CaptureSession */ = {
 			isa = PBXGroup;
 			children = (
-				8F6C28B224B6E7EE00531331 /* CaptureSessionManager.swift */,
 				8F6C28B324B6E7EE00531331 /* CaptureDevice.swift */,
-				8F6C28B424B6E7EF00531331 /* CaptureSession+Flash.swift */,
-				8F6C28B524B6E7EF00531331 /* CaptureSession+Orientation.swift */,
 				8F6C28B624B6E7EF00531331 /* CaptureSession.swift */,
-				8F6C28B724B6E7EF00531331 /* CaptureSessionDelegate.swift */,
+				8F6C28B424B6E7EF00531331 /* CaptureSession+Flash.swift */,
 				8F6C28B824B6E7EF00531331 /* CaptureSession+Focus.swift */,
+				8F6C28B524B6E7EF00531331 /* CaptureSession+Orientation.swift */,
+				8F6C28B724B6E7EF00531331 /* CaptureSessionDelegate.swift */,
+				8F6C28B224B6E7EE00531331 /* CaptureSessionManager.swift */,
 			);
 			path = CaptureSession;
 			sourceTree = "<group>";
@@ -129,8 +147,8 @@
 		8F6C28B924B6E7EF00531331 /* DocumentScan */ = {
 			isa = PBXGroup;
 			children = (
-				8F6C28BA24B6E7EF00531331 /* DocumentScanViewController.swift */,
 				8F6C28BB24B6E7EF00531331 /* DocumentScanCaptureSessionDelegateImpl.swift */,
+				8F6C28BA24B6E7EF00531331 /* DocumentScanViewController.swift */,
 			);
 			path = DocumentScan;
 			sourceTree = "<group>";
@@ -138,9 +156,10 @@
 		8F6C28C424B6E7EF00531331 /* MLDetectors */ = {
 			isa = PBXGroup;
 			children = (
+				8F18D559256B67190005002D /* CIQRDetector.swift */,
+				8F6C28CA24B6E7EF00531331 /* RectangleDetectorResult.swift */,
 				8F6C28C524B6E7EF00531331 /* VisionRectangleDetector.swift */,
 				8F6C28C624B6E7EF00531331 /* Utils */,
-				8F6C28CA24B6E7EF00531331 /* RectangleDetectorResult.swift */,
 			);
 			path = MLDetectors;
 			sourceTree = "<group>";
@@ -148,9 +167,9 @@
 		8F6C28C624B6E7EF00531331 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8F6C28C924B6E7EF00531331 /* Arrays+Utils.swift */,
 				8F6C28C724B6E7EF00531331 /* Quadrilateral+Ext.swift */,
 				8F6C28C824B6E7EF00531331 /* RectangleFeatureFunnel.swift */,
-				8F6C28C924B6E7EF00531331 /* Arrays+Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -158,13 +177,14 @@
 		8F6C28CB24B6E7EF00531331 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8F6C28CC24B6E7EF00531331 /* CGSize+Ext.swift */,
-				8F6C28CD24B6E7EF00531331 /* UIImage+Ext.swift */,
+				8F18D55E256B69220005002D /* AVMetadataObject+Ext.swift */,
+				8F6C28D024B6E7EF00531331 /* CGAffineTransform+Utils.swift */,
 				8F6C28CE24B6E7EF00531331 /* CGImagePropertyOrientation.swift */,
 				8F6C28CF24B6E7EF00531331 /* CGPoint+Ext.swift */,
-				8F6C28D024B6E7EF00531331 /* CGAffineTransform+Utils.swift */,
-				8F6C28D124B6E7EF00531331 /* CIImage+Ext.swift */,
 				8F6C28D224B6E7EF00531331 /* CGRect+Ext.swift */,
+				8F6C28CC24B6E7EF00531331 /* CGSize+Ext.swift */,
+				8F6C28D124B6E7EF00531331 /* CIImage+Ext.swift */,
+				8F6C28CD24B6E7EF00531331 /* UIImage+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,9 +201,9 @@
 		8F6C28D624B6E7EF00531331 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8F6C28D924B6E7EF00531331 /* FocusRectangleView.swift */,
 				8F6C28D724B6E7EF00531331 /* ShutterButton.swift */,
 				8F6C28D824B6E7EF00531331 /* Transformable.swift */,
-				8F6C28D924B6E7EF00531331 /* FocusRectangleView.swift */,
 				8F6C28DA24B6E7EF00531331 /* Quadrilateral */,
 			);
 			path = Views;
@@ -192,10 +212,10 @@
 		8F6C28DA24B6E7EF00531331 /* Quadrilateral */ = {
 			isa = PBXGroup;
 			children = (
-				8F6C28DB24B6E7EF00531331 /* Quadrilater+Transformable.swift */,
 				8F6C28DC24B6E7EF00531331 /* EditScanCornerView.swift */,
-				8F6C28DD24B6E7EF00531331 /* QuadrilateralView.swift */,
+				8F6C28DB24B6E7EF00531331 /* Quadrilater+Transformable.swift */,
 				8F6C28DE24B6E7EF00531331 /* Quadrilateral.swift */,
+				8F6C28DD24B6E7EF00531331 /* QuadrilateralView.swift */,
 			);
 			path = Quadrilateral;
 			sourceTree = "<group>";
@@ -350,9 +370,13 @@
 				8F6C28E724B6E7EF00531331 /* DocumentScanViewController.swift in Sources */,
 				8F6C290424B6E7EF00531331 /* ImageScanResult.swift in Sources */,
 				8F6C28E024B6E7EF00531331 /* CaptureSessionManager.swift in Sources */,
+				8F18D5F1256B95CE0005002D /* QRScanViewController.swift in Sources */,
 				8F6C28F224B6E7EF00531331 /* Arrays+Utils.swift in Sources */,
+				8F18D5F4256B98610005002D /* QRScanCaptureSessionDelegateImpl.swift in Sources */,
+				8F18D55A256B67190005002D /* CIQRDetector.swift in Sources */,
 				8F6C28F324B6E7EF00531331 /* RectangleDetectorResult.swift in Sources */,
 				8F6C28F024B6E7EF00531331 /* Quadrilateral+Ext.swift in Sources */,
+				8F18D55F256B69220005002D /* AVMetadataObject+Ext.swift in Sources */,
 				8F6C28F624B6E7EF00531331 /* CGImagePropertyOrientation.swift in Sources */,
 				8F6C28F924B6E7EF00531331 /* CIImage+Ext.swift in Sources */,
 				8F6C290024B6E7EF00531331 /* Quadrilater+Transformable.swift in Sources */,

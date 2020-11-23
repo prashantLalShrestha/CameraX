@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import Vision
 
 extension Quadrilateral {
@@ -17,5 +18,13 @@ extension Quadrilateral {
         self.topRight = rectangleObservation.topRight
         self.bottomLeft = rectangleObservation.bottomLeft
         self.bottomRight = rectangleObservation.bottomRight
+    }
+    
+    @available(iOS 11.0, *)
+    init(qrFeature: CIQRCodeFeature) {
+        self.topLeft = qrFeature.topLeft
+        self.topRight = qrFeature.topRight
+        self.bottomLeft = qrFeature.bottomLeft
+        self.bottomRight = qrFeature.bottomRight
     }
 }

@@ -53,7 +53,7 @@ open class DocumentScanViewController: CameraViewController {
     
     // MARK: - Properties
     private var scanType: ScanType = .auto
-    private var previousScanType: ScanType = .auto
+    private var previousScanType: ScanType = .manual(.zero)
     
     public var quadFillColor: UIColor = UIColor(white: 0.0, alpha: 0.6) {
         didSet {

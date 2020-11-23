@@ -25,15 +25,6 @@ class DocumentScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
         self.documentScanViewController = documentScanViewController
     }
     
-    
-    func didStartCaptureSession(in captureSessionManager: CaptureSessionManager) {
-        
-    }
-    
-    func didStopCaptureSession(in captureSessionManager: CaptureSessionManager) {
-        
-    }
-    
     func didStartCapturingPicture(from captureSessionManager: CaptureSessionManager) {
         captureSessionManager.stop()
         documentScanViewController.shutterButton.isUserInteractionEnabled = false

@@ -63,7 +63,7 @@ final class RectangleFeaturesFunnel {
     let minNumberOfMatches = 3
     
     /// The number of similar rectangles that need to be found to auto scan.
-    let autoScanThreshold = 35
+    var autoScanThreshold = 35
     
     /// The number of times the rectangle has passed the threshold to be auto-scanned
     var currentAutoScanPassCount = 0

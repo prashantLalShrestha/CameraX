@@ -43,6 +43,8 @@ public final class CaptureSessionManager: NSObject {
         let videoOutput = AVCaptureVideoDataOutput()
         videoOutput.alwaysDiscardsLateVideoFrames = true
         
+        let metadataOutput = AVCaptureMetadataOutput()
+        
         defer {
             device.unlockForConfiguration()
             captureSession.commitConfiguration()
@@ -51,7 +53,8 @@ public final class CaptureSessionManager: NSObject {
         guard let deviceInput = try? AVCaptureDeviceInput(device: device),
             captureSession.canAddInput(deviceInput),
             captureSession.canAddOutput(photoOutput),
-            captureSession.canAddOutput(videoOutput) else {
+            captureSession.canAddOutput(videoOutput),
+            captureSession.canAddOutput(metadataOutput) else {
             let error = CameraError.inputDevice
             delegate?.captureSessionManager(self, didFailWithError: error)
             return
@@ -70,11 +73,14 @@ public final class CaptureSessionManager: NSObject {
         captureSession.addInput(deviceInput)
         captureSession.addOutput(photoOutput)
         captureSession.addOutput(videoOutput)
+        captureSession.addOutput(metadataOutput)
         
         videoPreviewLayer.session = captureSession
         videoPreviewLayer.videoGravity = .resizeAspectFill
         
         videoOutput.setSampleBufferDelegate(self, queue: DispatchQueue(label: "video_ouput_queue"))
+        metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue(label: "metadata_output_queue"))
+        metadataOutput.metadataObjectTypes = AVMetadataObject.ObjectType.barcodeScannerMetadata
     }
     
     internal func start() {
@@ -125,6 +131,11 @@ public final class CaptureSessionManager: NSObject {
     }
 }
 
+extension CaptureSessionManager: AVCaptureMetadataOutputObjectsDelegate {
+    public func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        delegate?.captureSessionManager(self, didOutput: metadataObjects)
+    }
+}
 
 extension CaptureSessionManager: AVCaptureVideoDataOutputSampleBufferDelegate {
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
