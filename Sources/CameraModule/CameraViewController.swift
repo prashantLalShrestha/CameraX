@@ -210,6 +210,8 @@ open class CameraViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVCaptureDeviceSubjectAreaDidChange, object: nil)
+        
+        captureSessionManager = nil
     }
     
     override open func didReceiveMemoryWarning() {
