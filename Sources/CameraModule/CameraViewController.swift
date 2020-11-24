@@ -136,6 +136,14 @@ open class CameraViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        captureSessionManager?.stop()
+        
+        guard let device = AVCaptureDevice.default(for: .video) else { return }
+        if device.torchMode == .on {
+            toggleFlash()
+        }
+    }
     
     // MARK: - Life Cycle
     open override func viewDidLoad() {
