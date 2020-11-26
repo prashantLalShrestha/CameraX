@@ -77,7 +77,16 @@ class QRScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
         switch error {
         case CameraError.authorization:
-            qrScanViewController.openSettingsApp()
+            let alertController = UIAlertController(title: "Camera is unavailable", message: "The camera could not be turned on, please check your device's settings.", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.qrScanViewController.closeBarAction?()
+            }
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+                self.qrScanViewController.openSettingsApp()
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            qrScanViewController.present(alertController, animated: true, completion: nil)
         default:
             if !qrScanViewController.isBeingDismissed {
                 captureSessionManager.start()

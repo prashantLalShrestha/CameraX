@@ -161,6 +161,18 @@ open class CameraViewController: UIViewController {
         captureSessionManager = CaptureSessionManager(videoPreviewLayer: videoPreviewLayer, position: cameraPosition)
         
         NotificationCenter.default.addObserver(self, selector: #selector(subjectAreaDidChange), name: NSNotification.Name.AVCaptureDeviceSubjectAreaDidChange, object: nil)
+        
+        // Observe application will enter foreground notification
+        NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
+        
+        // Observe application did become active notification
+        NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        
+        // Observe application will resign active notification
+        NotificationCenter.default.addObserver(self, selector: #selector(willResignActive), name: UIApplication.willResignActiveNotification, object: nil)
+        
+        // Observe application did enter background notification
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     open override func viewWillAppear(_ animated: Bool) {
@@ -210,6 +222,11 @@ open class CameraViewController: UIViewController {
         super.viewDidDisappear(animated)
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVCaptureDeviceSubjectAreaDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didBecomeActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.willResignActiveNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
         
         captureSessionManager?.stop()
         captureSessionManager = nil
@@ -226,6 +243,17 @@ open class CameraViewController: UIViewController {
     open func updateUI() {
         
     }
+    
+    @objc open func willEnterForeground() {
+    }
+    
+    @objc open func didBecomeActive() {
+        self.updateUI()
+    }
+    
+    @objc open func willResignActive() { }
+    
+    @objc open func didEnterBackground() { }
     
     // MARK: - Camera Configuration Functions
     public func reset() {

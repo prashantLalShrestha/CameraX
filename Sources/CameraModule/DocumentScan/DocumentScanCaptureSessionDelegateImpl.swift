@@ -99,7 +99,16 @@ class DocumentScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
         switch error {
         case CameraError.authorization:
-            documentScanViewController.openSettingsApp()
+            let alertController = UIAlertController(title: "Camera is unavailable", message: "The camera could not be turned on, please check your device's settings.", preferredStyle: .alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+                self.documentScanViewController.closeBarAction?()
+            }
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { _ in
+                self.documentScanViewController.openSettingsApp()
+            }
+            alertController.addAction(cancelAction)
+            alertController.addAction(settingsAction)
+            documentScanViewController.present(alertController, animated: true, completion: nil)
         default:
             if !documentScanViewController.isBeingDismissed {
                 captureSessionManager.start()
