@@ -75,10 +75,14 @@ class QRScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
     }
     
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
-        
-        if !qrScanViewController.isBeingDismissed {
-            captureSessionManager.start()
-            qrScanViewController.shutterButton.isUserInteractionEnabled = true
+        switch error {
+        case CameraError.authorization:
+            qrScanViewController.openSettingsApp()
+        default:
+            if !qrScanViewController.isBeingDismissed {
+                captureSessionManager.start()
+                qrScanViewController.shutterButton.isUserInteractionEnabled = true
+            }
         }
     }
 }

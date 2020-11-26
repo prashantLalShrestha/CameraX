@@ -46,6 +46,7 @@
 		8F6C290324B6E7EF00531331 /* Quadrilateral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28DE24B6E7EF00531331 /* Quadrilateral.swift */; };
 		8F6C290424B6E7EF00531331 /* ImageScanResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6C28DF24B6E7EF00531331 /* ImageScanResult.swift */; };
 		8FEFCBEC24B6DB52004F7516 /* CameraX.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FEFCBEA24B6DB52004F7516 /* CameraX.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8FF48C882570398500D38A40 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF48C872570398500D38A40 /* UIViewController+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		8FEFCBE724B6DB52004F7516 /* CameraX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CameraX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEFCBEA24B6DB52004F7516 /* CameraX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CameraX.h; sourceTree = "<group>"; };
 		8FEFCBEB24B6DB52004F7516 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FF48C872570398500D38A40 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 				8F6C28CC24B6E7EF00531331 /* CGSize+Ext.swift */,
 				8F6C28D124B6E7EF00531331 /* CIImage+Ext.swift */,
 				8F6C28CD24B6E7EF00531331 /* UIImage+Ext.swift */,
+				8FF48C872570398500D38A40 /* UIViewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -368,6 +371,7 @@
 				8F6C28E524B6E7EF00531331 /* CaptureSessionDelegate.swift in Sources */,
 				8F6C28ED24B6E7EF00531331 /* CameraError.swift in Sources */,
 				8F6C28E724B6E7EF00531331 /* DocumentScanViewController.swift in Sources */,
+				8FF48C882570398500D38A40 /* UIViewController+Ext.swift in Sources */,
 				8F6C290424B6E7EF00531331 /* ImageScanResult.swift in Sources */,
 				8F6C28E024B6E7EF00531331 /* CaptureSessionManager.swift in Sources */,
 				8F18D5F1256B95CE0005002D /* QRScanViewController.swift in Sources */,

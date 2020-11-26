@@ -97,10 +97,14 @@ class DocumentScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
     }
     
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
-        
-        if !documentScanViewController.isBeingDismissed {
-            captureSessionManager.start()
-            documentScanViewController.shutterButton.isUserInteractionEnabled = true
+        switch error {
+        case CameraError.authorization:
+            documentScanViewController.openSettingsApp()
+        default:
+            if !documentScanViewController.isBeingDismissed {
+                captureSessionManager.start()
+                documentScanViewController.shutterButton.isUserInteractionEnabled = true
+            }
         }
     }
     
