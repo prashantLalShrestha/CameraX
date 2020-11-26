@@ -83,7 +83,7 @@ public final class CaptureSessionManager: NSObject {
         metadataOutput.metadataObjectTypes = AVMetadataObject.ObjectType.barcodeScannerMetadata
     }
     
-    internal func start() {
+    public func start() {
         let authorizationStatus = AVCaptureDevice.authorizationStatus(for: .video)
         
         switch authorizationStatus {
@@ -104,12 +104,12 @@ public final class CaptureSessionManager: NSObject {
         }
     }
     
-    internal func stop() {
+    public func stop() {
         captureSession.stopRunning()
         delegate?.didStopCaptureSession(in: self)
     }
     
-    internal func capturePhoto() {
+    public func capturePhoto() {
         guard let connection = photoOutput.connection(with: .video),
             connection.isEnabled,
             connection.isActive else {

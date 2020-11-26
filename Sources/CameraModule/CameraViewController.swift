@@ -211,6 +211,7 @@ open class CameraViewController: UIViewController {
         
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVCaptureDeviceSubjectAreaDidChange, object: nil)
         
+        captureSessionManager?.stop()
         captureSessionManager = nil
     }
     

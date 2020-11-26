@@ -68,14 +68,18 @@ class QRScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
             self.qrScanViewController.processImageCropping(captureSessionManager, image: picture, quad: quad)
         }
         
-        captureSessionManager.start()
-        qrScanViewController.shutterButton.isUserInteractionEnabled = true
+        if !qrScanViewController.isBeingDismissed {
+            captureSessionManager.start()
+            qrScanViewController.shutterButton.isUserInteractionEnabled = true
+        }
     }
     
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
         
-        captureSessionManager.start()
-        qrScanViewController.shutterButton.isUserInteractionEnabled = true
+        if !qrScanViewController.isBeingDismissed {
+            captureSessionManager.start()
+            qrScanViewController.shutterButton.isUserInteractionEnabled = true
+        }
     }
 }
 

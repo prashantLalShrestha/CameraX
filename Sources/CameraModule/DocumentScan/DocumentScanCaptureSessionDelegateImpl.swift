@@ -90,14 +90,18 @@ class DocumentScanCaptureSessionDelegateImpl: NSObject, CaptureSessionDelegate {
             }
         }
         
-        captureSessionManager.start()
-        documentScanViewController.shutterButton.isUserInteractionEnabled = true
+        if !documentScanViewController.isBeingDismissed {
+            captureSessionManager.start()
+            documentScanViewController.shutterButton.isUserInteractionEnabled = true
+        }
     }
     
     func captureSessionManager(_ captureSessionManager: CaptureSessionManager, didFailWithError error: Error) {
         
-        captureSessionManager.start()
-        documentScanViewController.shutterButton.isUserInteractionEnabled = true
+        if !documentScanViewController.isBeingDismissed {
+            captureSessionManager.start()
+            documentScanViewController.shutterButton.isUserInteractionEnabled = true
+        }
     }
     
     
