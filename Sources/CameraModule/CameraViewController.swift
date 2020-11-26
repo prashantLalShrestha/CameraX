@@ -88,7 +88,7 @@ open class CameraViewController: UIViewController {
     
     public var closeBarButtonIcon: UIImage?
     public var backBarButtonIcon: UIImage?
-    private var closeBarAction: (() -> ())?
+    public var closeBarAction: (() -> ())?
     
     public var shutterButtonInnerColor: UIColor = UIColor.white {
         didSet {
